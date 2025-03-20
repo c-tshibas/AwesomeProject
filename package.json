@@ -10,8 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@datadog/mobile-react-native": "^2.6.3",
+    "@datadog/mobile-react-navigation": "^2.6.3",
     "react": "19.0.0",
-    "react-native": "0.78.1"
+    "react-native": "0.78.1",
+    "react-native-webview": "^13.13.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
