@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@datadog/mobile-react-native": "^2.6.3",
+    "@datadog/mobile-react-native-session-replay": "^2.6.4",
     "@datadog/mobile-react-native-webview": "^2.6.1",
     "@datadog/mobile-react-navigation": "^2.6.3",
     "react": "19.0.0",
