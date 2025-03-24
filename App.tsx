@@ -15,6 +15,14 @@ import {
   TrackingConsent
 } from '@datadog/mobile-react-native';
 
+// Import the Session Replay module
+import {
+  ImagePrivacyLevel,
+  SessionReplay,
+  TextAndInputPrivacyLevel,
+  TouchPrivacyLevel,
+} from '@datadog/mobile-react-native-session-replay';
+
 import { globalVariables } from './utils/variables' 
 import { WebView } from '@datadog/mobile-react-native-webview';
 
@@ -27,7 +35,8 @@ const config = new DatadogProviderConfiguration(
   true, // track XHR Resources
   true, // track Errors
   TrackingConsent.GRANTED
-)
+);
+
 // Optional: Select your Datadog website (one of "US1", "EU1", "US3", "US5", "AP1" or "GOV")
 config.site = 'US1';
 // Optional: Enable JavaScript long task collection
@@ -43,15 +52,24 @@ config.batchSize = BatchSize.SMALL;
 // Optional: Enable debug logging
 config.verbosity = SdkVerbosity.DEBUG;
 
+// Add this function as onInitialization prop to DatadogProvider
+const onSDKInitialized = async () => {
+  await SessionReplay.enable({
+     replaySampleRate: 100,
+     textAndInputPrivacyLevel: TextAndInputPrivacyLevel.MASK_SENSITIVE_INPUTS,
+     imagePrivacyLevel: ImagePrivacyLevel.MASK_NONE,
+     touchPrivacyLevel: TouchPrivacyLevel.SHOW,
+  });
+};
+
 // HELLO WORLD APPLICATION TEMPLATE
 export default function HelloWorldApp() {
   return (
-    <DatadogProvider configuration={config}>
+    <DatadogProvider configuration={config} onInitialization={onSDKInitialized}>
       <WebView
-        source={{ uri: 'https://qtf8f655301d564bb4b0139f539f.free.beeceptor.com/' }}
-        allowedHosts={['qtf8f655301d564bb4b0139f539f.free.beeceptor.com']}
+        source={{ uri: 'https://qtf323f68ea6cda4536b92e94395.free.beeceptor.com/' }}
+        allowedHosts={['qtf323f68ea6cda4536b92e94395.free.beeceptor.com']}
       />
     </DatadogProvider>
   );
-};
-
+}
