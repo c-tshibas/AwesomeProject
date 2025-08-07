@@ -10,10 +10,10 @@
     "test": "jest"
   },
   "dependencies": {
-    "@datadog/mobile-react-native": "^2.6.3",
-    "@datadog/mobile-react-native-session-replay": "^2.6.4",
-    "@datadog/mobile-react-native-webview": "^2.6.1",
-    "@datadog/mobile-react-navigation": "^2.6.3",
+    "@datadog/mobile-react-native": "^2.10.0",
+    "@datadog/mobile-react-native-session-replay": "^2.10.0",
+    "@datadog/mobile-react-native-webview": "^2.10.0",
+    "@datadog/mobile-react-navigation": "^2.10.0",
     "react": "19.0.0",
     "react-native": "0.78.1",
     "react-native-config": "^1.5.5",

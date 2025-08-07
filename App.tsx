@@ -23,7 +23,7 @@ import {
   TouchPrivacyLevel,
 } from '@datadog/mobile-react-native-session-replay';
 
-import { globalVariables } from './utils/variables' 
+import { globalVariables } from './utils/variables';
 import { WebView } from '@datadog/mobile-react-native-webview';
 
 // CONFIGURATION FOR THE DATADOG RN SDK
@@ -67,8 +67,8 @@ export default function HelloWorldApp() {
   return (
     <DatadogProvider configuration={config} onInitialization={onSDKInitialized}>
       <WebView
-        source={{ uri: 'https://qtf323f68ea6cda4536b92e94395.free.beeceptor.com/' }}
-        allowedHosts={['qtf323f68ea6cda4536b92e94395.free.beeceptor.com']}
+        source={{ uri: 'https://qt1d40460e4e3a5cb512636f262d.free.beeceptor.com/' }}
+        allowedHosts={['qt1d40460e4e3a5cb512636f262d.free.beeceptor.com']}
       />
     </DatadogProvider>
   );
